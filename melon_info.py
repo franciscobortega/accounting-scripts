@@ -1,7 +1,7 @@
 """Print out all the melons in our inventory."""
 
 
-from melons import melon_names, melon_prices, melon_seedlessness, melon_flesh_color, melon_rind_color, melon_average_weight
+from melons import melons
 
 
 def print_melon(name, price, seedless, flesh, rind, weight):
@@ -10,5 +10,9 @@ def print_melon(name, price, seedless, flesh, rind, weight):
     print(f'{name.upper()}\nprice: {price:.2f}\nseedless: {seedless}\nflesh_color: {flesh}\nrind_color: {rind}\naverage_weight: {weight}')
 
 
-for i in melon_names:
-    print_melon(melon_names[i], melon_prices[i], melon_seedlessness[i], melon_flesh_color[i], melon_rind_color[i], melon_average_weight[i])
+for melon in melons:
+    # destructuring value for each melon dictionary in melons list
+    name, price, seedlessness, flesh_color, rind_color, average_weight = melon.values()
+
+    # passing in values to print_melon function
+    print_melon(name, price, seedlessness, flesh_color, rind_color, average_weight)
