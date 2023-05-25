@@ -2,12 +2,23 @@
 
 
 from melons import melons
+import textwrap
 
 
 def print_melon(name, price, seedless, flesh, rind, weight):
     """Print each melon with corresponding attribute information."""
 
-    print(f'{name.upper()}\nprice: {price:.2f}\nseedless: {seedless}\nflesh_color: {flesh}\nrind_color: {rind}\naverage_weight: {weight}')
+    # formatted information is assigned to variable
+    attribute_information = f"""
+    {name.upper()}
+    price: {price:.2f}
+    seedless: {seedless}
+    flesh_color: {flesh}
+    rind_color: {rind}
+    average_weight: {weight}"""
+
+    # formatted information is printed and indentation from triple string is removed
+    print(textwrap.dedent(attribute_information))
 
 
 for melon in melons:
